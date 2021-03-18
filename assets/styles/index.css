@@ -14,6 +14,7 @@ header {
     padding: 10px;
     background-color: #F5DB13;
     box-shadow: 0px 3px 21px -5px rgba(0,0,0,0.75);
+    z-index: 1;
 }
 
 header > img {
@@ -63,22 +64,25 @@ body {
 }
 
 main {
+    background: linear-gradient(#F5DB13, #F2B807);
+}
+
+main, main > div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    background: linear-gradient(#F5DB13, #F2B807);
+    text-align: center;    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
     flex: 1;
 }
 
-main > h1 {
+main > div > h1 {
     font-size: 42px;      
     font-weight: normal;
     padding: 15px 40px;
 }
 
-main > p {
+main > div > p {
     font-size: 24px;      
     font-weight: normal;
     padding: 0 40px;
@@ -101,5 +105,27 @@ main > p {
 
     .hamburguer-menu {
         display: none;
+    }
+}
+
+@media(min-width: 769px) {
+    main {
+        flex-direction: row-reverse;
+    }        
+
+    main > img, main > div {
+        flex-grow: 1;
+    }
+
+    .pikachu {
+        max-width: 55%;    
+    }
+
+    main > div {   
+        justify-content: space-between;             
+    }
+
+    main > div > p {
+        margin: 64px 0;
     }
 }
