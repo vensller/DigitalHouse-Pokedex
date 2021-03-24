@@ -53,8 +53,32 @@ header > button {
     align-items: center;    
     justify-content: center;
     text-decoration: none;
-    color: black;
+    color: #000;
     font-weight: bold;
+    transition: background 0.5s, color 0.5s;
+}
+
+.link-pokemons:hover {
+    color: #fff;
+    background: #5eaf62;
+}
+
+.botao-flutuante {
+    position: fixed;
+    width: 64px;
+    height: 64px; 
+    right: 10px;   
+    bottom: 10px;
+    transition: width 1.0s, height 0.5s;
+}
+
+.botao-flutuante > img {
+    width: 100%;
+}
+
+.botao-flutuante:hover {
+    width: 124px;
+    height: 124px;
 }
 
 body {
@@ -110,7 +134,7 @@ main > div > p {
 
 @media(min-width: 769px) {
     main {
-        flex-direction: row-reverse;
+        flex-direction: row-reverse;        
     }        
 
     main > img, main > div {
