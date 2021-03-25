@@ -55,7 +55,7 @@ header > button {
     text-decoration: none;
     color: #000;
     font-weight: bold;
-    transition: background 0.5s, color 0.5s;
+    transition: background 0.5s, color 0.5s;    
 }
 
 .link-pokemons:hover {
@@ -70,6 +70,7 @@ header > button {
     right: 10px;   
     bottom: 10px;
     transition: width 1.0s, height 0.5s;
+    animation: inicio-pokebola 2s 1;    
 }
 
 .botao-flutuante > img {
@@ -79,6 +80,22 @@ header > button {
 .botao-flutuante:hover {
     width: 124px;
     height: 124px;
+}
+
+@keyframes inicio-pokebola {
+    0% {
+        transform: translateY(-300px);        
+        opacity: 0%;
+    }
+
+    50% {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+
+    80% {
+        transform: translateY(-32px);
+    }
 }
 
 body {
