@@ -85,7 +85,7 @@ header > button {
 @keyframes inicio-pokebola {
     0% {
         transform: translateY(-300px);        
-        opacity: 0%;
+        opacity: 0%;        
     }
 
     50% {
