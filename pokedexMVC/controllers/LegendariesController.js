@@ -1,6 +1,9 @@
+const LegendariesService = require('../services/LegendariesService');
+
 const controller = {
     index: (req, res) => {
-        res.send('ok');
+        const legendariesList = LegendariesService.listLegendaries();             
+        res.json(legendariesList);
     }
 }
 
