@@ -1,0 +1,109 @@
+.main-legendaries {
+    background: #212121;
+    color: white;
+    padding: 0 10vw;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.main-legendaries > h1 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+
+    padding-top: 25px;
+    margin: 10px 0;
+
+    align-self: flex-start;
+}
+
+.legendarie-details {
+    height: 426px;
+    padding: 50px 40px 50px 0;
+    border-top: 2px solid white;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.legendarie-details > div {
+    display: flex;
+    flex-flow: column;
+    width: 40%;
+}
+
+.legendarie-details > div > h2 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+}
+
+.legendarie-details > div > p {
+    margin-bottom: 20px;
+}
+
+.legendarie-stats {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.legendarie-stats > div {
+    margin: 20px 40px 0 0;
+}
+
+.progress-bar {
+    border-radius: 25px;
+    background: white;
+}
+
+.progress-bar > div {
+    height: 7px;
+    width: 80%;
+    background: #F5DB13;
+    border-radius: 25px;
+}
+
+.legendaries-carousel {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+    
+}
+
+.carousel-legendarie-box {
+    width: 127px;
+    margin: 0 25px;
+    border-radius: 15px;
+    background: #FDEA93;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.5;
+}
+
+.first {
+    opacity: 1;
+}
+
+
+.carousel-legendarie-box > img {
+    width: 172px;
+    height: 148px;
+    position: relative;
+    left: -15px;
+}
+
+.carousel-legendarie-box > div {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    color: black;
+    font-weight: 400;
+    border-radius: 15px;
+    height: 52px;
+    align-items: center;
+    padding: 0 8px;
+}
+
