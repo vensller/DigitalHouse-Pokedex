@@ -6,9 +6,7 @@ const controller = {
 
         const legendary = LegendariesService.listPokemonData(name);        
 
-        return res.render('legendaries', {
-            legendary
-        });      
+        return res.json(legendary);
     }
 }
 
