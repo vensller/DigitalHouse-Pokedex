@@ -1,4 +1,5 @@
 const LegendaryModel = require('../models/LegendaryModel');
+const { v4: uuidv4 } = require('uuid');
 
 const LegendariesService = {
     listLegendaries: () => {
@@ -35,6 +36,31 @@ const LegendariesService = {
         }
 
         return pokemon;
+    },
+    createLegendary: (
+        name, 
+        description, 
+        type, 
+        healthPoints, 
+        specialAttack, 
+        defense, 
+        attack, 
+        experience, 
+        specialDefense
+        ) => {             
+        const newLegendary = new LegendaryModel(
+            uuidv4(), 
+            name, 
+            description, 
+            type, 
+            healthPoints, 
+            specialAttack, 
+            defense, 
+            attack, 
+            experience, 
+            specialDefense
+        );
+        return newLegendary;
     }
 }
 
