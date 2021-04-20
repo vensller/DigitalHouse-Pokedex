@@ -1,4 +1,5 @@
 const LegendariesService = require('../services/LegendariesService');
+const { validationResult } = require('express-validator');
 
 const controller = {
     index: (req, res) => {
@@ -9,6 +10,13 @@ const controller = {
         return res.json(legendary);
     },
     create: (req, res) => {
+        //Express-validator
+        // let errors = validationResult(req);
+        
+        // if (!errors.isEmpty()) {
+        //     return res.status(400).json(errors);
+        // }
+
         const { 
             name, 
             description, 
