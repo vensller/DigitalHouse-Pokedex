@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 const multer = require('multer');
+const session = require('express-session');
 
 const multerConfig = require('./config/multer');
 
@@ -17,6 +18,12 @@ const Logger = require('./middlewares/Logger');
 
 const app = express();
 const uploadFile = multer({storage: multerConfig});
+
+app.use(session({
+  secret: '9b99e32a1b7192927c8fb259559f88c2',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

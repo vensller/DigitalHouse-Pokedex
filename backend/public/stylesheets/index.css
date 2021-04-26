@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+.dark-mode {
+    background-color: black;
+}
+
 header {
     display: flex;
     flex-direction: row;

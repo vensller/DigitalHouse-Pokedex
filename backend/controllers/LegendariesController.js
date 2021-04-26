@@ -3,6 +3,7 @@ const { validationResult } = require('express-validator');
 
 const controller = {
     index: (req, res) => {
+        console.log(req.session);
         const { name } = req.query;
 
         const legendary = LegendariesService.listPokemonData(name);        
