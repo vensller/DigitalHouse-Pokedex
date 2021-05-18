@@ -10,4 +10,6 @@ router.get('/', controller.index);
 router.post('/', validator, controller.create);
 router.put('/:id', validator, controller.update);
 
+router.get('/all', controller.indexAll);
+
 module.exports = router;
