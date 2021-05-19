@@ -39,7 +39,7 @@ const LegendariesService = {
 
         return pokemon;
     },
-    createLegendary: (
+    createLegendary: async (
         name, 
         description, 
         type, 
@@ -49,9 +49,8 @@ const LegendariesService = {
         attack, 
         experience, 
         specialDefense
-        ) => {             
-        const newLegendary = new LegendaryModel(
-            uuidv4(), 
+        ) => {      
+        const newLegendary = await database.Legendary.create({
             name, 
             description, 
             type, 
@@ -61,10 +60,10 @@ const LegendariesService = {
             attack, 
             experience, 
             specialDefense
-        );
-        return newLegendary;
+        });     
+        return newLegendary;   
     },
-    getLegendaryList: async () => {
+    getLegendaryList: async () => {        
         const resultados = await database.Legendary.findAll(); 
         return resultados;       
     }

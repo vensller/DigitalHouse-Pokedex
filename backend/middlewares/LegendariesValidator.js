@@ -25,7 +25,8 @@ function validator(req, res, next) {
     const schema = yup.object().shape({
         name: yup.string().required(),
         type: yup.string().required(),
-        description: yup.string().required().min(10)
+        description: yup.string().required().min(10),
+        specialAttack: yup.number(),
     });
 
     if (!schema.isValidSync(req.body)) {

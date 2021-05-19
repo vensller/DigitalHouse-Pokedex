@@ -13,14 +13,7 @@ const controller = {
         const list = await LegendariesService.getLegendaryList();
         return res.json(list);
     },
-    create: (req, res) => {
-        //Express-validator
-        // let errors = validationResult(req);
-        
-        // if (!errors.isEmpty()) {
-        //     return res.status(400).json(errors);
-        // }
-
+    create: async (req, res) => {
         const { 
             name, 
             description, 
@@ -33,7 +26,7 @@ const controller = {
             specialDefense
         } = req.body;
 
-        const legendary = LegendariesService.createLegendary(
+        const legendary = await LegendariesService.createLegendary(
             name, 
             description, 
             type, 
