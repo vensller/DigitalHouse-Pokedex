@@ -40,7 +40,7 @@ const controller = {
         
         return res.json(legendary);
     },
-    update: (req, res) => { 
+    update: async (req, res) => { 
         const { id } = req.params;
         const { 
             name, 
@@ -54,7 +54,27 @@ const controller = {
             specialDefense
         } = req.body;
 
-        res.json();       
+        const updatedLegendary = await LegendariesService.updateLegendary(
+            id, 
+            name, 
+            description, 
+            type, 
+            healthPoints, 
+            specialAttack, 
+            defense, 
+            attack, 
+            experience,
+            specialDefense
+        );
+
+        res.json(updatedLegendary);       
+    },
+    destroy: async (req, res) => {
+        const { id } = req.params;
+
+        const destroyedLegendary = await LegendariesService.destroyLegendary(id);
+
+        return res.json(destroyedLegendary);
     }
 }
 

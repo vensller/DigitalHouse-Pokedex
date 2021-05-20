@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', controller.index);
 router.post('/', validator, controller.create);
 router.put('/:id', validator, controller.update);
+router.delete('/:id', controller.destroy);
 
 router.get('/all', controller.indexAll);
 
