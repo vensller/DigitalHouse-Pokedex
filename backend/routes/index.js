@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+// MVC = MODEL / VIEW / CONTROLLER
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   console.log(req.cookies);

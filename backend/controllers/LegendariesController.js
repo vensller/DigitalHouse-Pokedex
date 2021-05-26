@@ -1,13 +1,26 @@
 const LegendariesService = require('../services/LegendariesService');
-const { validationResult } = require('express-validator');
+const database = require('../database/models');
+// MVCS - MODEL / VIEW / CONTROLLER / SERVICE
+
+// PAREDE = VIEW
+// CONTROLLER = PEDREIRO / Mestre de obras
+// SERVICE = SERVENTE DO PEDREIRO
+// MODEL = CIMENTO / TIJOLO
+
+// VIEW = LAYOUT / DESENHO
+// CONTROLLER = ARTICULADOR / MEIO DE CAMPO / INTERMEDIADOR
+// SERVICE = 
+// MODEL = INFORMAÇÃO
 
 const controller = {
-    index: (req, res) => {
+    index: async (req, res) => {
         const { name } = req.query;
-
-        const legendary = LegendariesService.listPokemonData(name);        
-
-        return res.json(legendary);
+        const legendary = await database.Legendary.findOne({
+            where: {
+                name
+            }
+        });
+        return res.render('legendaries', {legendary});
     },
     indexAll: async (req, res) => {
         const list = await LegendariesService.getLegendaryList();
