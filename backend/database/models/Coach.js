@@ -18,7 +18,9 @@ module.exports = (sequelize, DataTypes) => {
 
     Coach.associate = function(models) {
         Coach.belongsToMany(models.Legendary, {
-            through: models.CoachLegendary
+            through: models.CoachLegendary,
+            foreignKey: 'COACH_ID',
+            otherKey: 'LEGENDARIES_ID'
         });
     }
 
