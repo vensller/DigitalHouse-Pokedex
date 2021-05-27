@@ -1,4 +1,5 @@
-module.exports = (sequelize, DataTypes) => sequelize.define("Legendary", 
+module.exports = (sequelize, DataTypes) => {
+    const Legendary = sequelize.define("Legendary", 
     {
         id: {
             type: DataTypes.INTEGER,
@@ -37,4 +38,13 @@ module.exports = (sequelize, DataTypes) => sequelize.define("Legendary",
         tableName: 'LEGENDARIES',
         timestamps: false,
     }
-);
+    );
+
+    Legendary.associate = function(models) {        
+        Legendary.belongsToMany(models.Coach, {
+            through: models.CoachLegendary
+        });
+    }
+
+    return Legendary;
+};
