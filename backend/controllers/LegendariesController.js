@@ -1,5 +1,6 @@
 const LegendariesService = require('../services/LegendariesService');
 const database = require('../database/models');
+
 // MVCS - MODEL / VIEW / CONTROLLER / SERVICE
 
 // PAREDE = VIEW
