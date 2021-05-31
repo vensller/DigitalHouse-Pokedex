@@ -9,25 +9,25 @@ module.exports = (sequelize, DataTypes) => {
         name: {
             type: DataTypes.STRING(100),            
         },
-        description:{
+        description: {
             type: DataTypes.STRING(100),
         },
-        type:{
+        type: {
             type: DataTypes.STRING(100),
         },
-        healthPoints:{
+        healthPoints: {
             type: DataTypes.FLOAT,
         },
-        specialAttack:{
+        specialAttack: {
             type: DataTypes.FLOAT,
         },
-        defense:{
+        defense: {
             type: DataTypes.FLOAT,
         },
-        attack:{
+        attack: {
             type: DataTypes.FLOAT,
         },
-        experience:{
+        experience: {
             type: DataTypes.FLOAT,
         },
         specialDefense:{
@@ -35,8 +35,7 @@ module.exports = (sequelize, DataTypes) => {
         },
     },
     {
-        tableName: 'LEGENDARIES',
-        timestamps: false,
+        tableName: 'legendaries',
     }
     );
 
