@@ -1,5 +1,4 @@
 const LegendaryModel = require('../models/LegendaryModel');
-const { v4: uuidv4 } = require('uuid');
 
 const database = require('../database/models/index');
 
@@ -65,6 +64,9 @@ const LegendariesService = {
     },
     getLegendaryList: async () => {        
         const resultados = await database.Legendary.findAll(); 
+        // const resultados = await database.sequelize.query("select * from legendaries", {
+        //     type: database.Sequelize.QueryTypes.SELECT,
+        // });
         return resultados;       
     },
     updateLegendary: async ( 
