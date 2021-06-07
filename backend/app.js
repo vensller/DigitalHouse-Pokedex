@@ -36,6 +36,28 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+// GET E POST
+// http://localhost:3333/legendaries/
+// http://localhost:3333/coaches/
+
+// PUT E DELETE
+// http://localhost:3333/legendaries/:id
+// http://localhost:3333/coaches/:id
+
+// GET DETALHADO
+// http://localhost:3333/legendaries/:id
+
+// GET LEGENDARY NOME
+// http://localhost:3333/legendaries/:id/:attribute
+// http://localhost:3333/coaches/:id/:attribute
+
+// PATCH LEGENDARY NOME
+// http://localhost:3333/legendaries/:id/:attribute
+// http://localhost:3333/legendaries/1/description
+
+// GET RELACIONAMENTO
+// http://localhost:3333/coaches/:id/legendaries
+
 app.use(Logger);
 app.use('/', indexRouter);
 app.use('/legendaries', legendariesRouter);
