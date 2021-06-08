@@ -47,7 +47,7 @@ app.use(cors());
 // GET DETALHADO
 // http://localhost:3333/legendaries/:id
 
-// GET LEGENDARY NOME
+// GET DETALHADO ATRIBUTO
 // http://localhost:3333/legendaries/:id/:attribute
 // http://localhost:3333/coaches/:id/:attribute
 

@@ -5,11 +5,14 @@ const validator = require('../middlewares/LegendariesValidator');
 
 const router = express.Router();
 
-/* GET legendaries. */
+// CRUD Legendaries
 router.get('/', controller.indexAll);
 router.post('/', validator, controller.create);
-
 router.put('/:id', validator, controller.update);
 router.delete('/:id', controller.destroy);
+
+// Get Detalhado
+router.get('/:id', controller.indexById);
+router.get('/:id/:attribute', controller.indexByIdAndAttribute);
 
 module.exports = router;
