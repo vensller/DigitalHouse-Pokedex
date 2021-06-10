@@ -6,6 +6,9 @@ const logger = require('morgan');
 const cors = require('cors');
 const multer = require('multer');
 const session = require('express-session');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerConfig = require('./swagger.json');
 
 const multerConfig = require('./config/multer');
 
@@ -62,6 +65,7 @@ app.use(Logger);
 app.use('/', indexRouter);
 app.use('/legendaries', legendariesRouter);
 app.post('/files', uploadFile.single('file'), FileController.storeFile);
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerConfig));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
